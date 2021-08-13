@@ -1,5 +1,5 @@
-// Include with the HTML.
-// Get the Data From Database And Call The Bottom Of this file.
+// Include with the inde.HTML.
+// Get the Data From Database.
 function getItems() {
 	db.collection('items')
 		.get()
