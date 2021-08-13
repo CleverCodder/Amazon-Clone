@@ -1,5 +1,5 @@
 // Include with the inde.HTML.
-// Get the Data From Database.
+// Get the Data From Database Hello.
 function getItems() {
 	db.collection('items')
 		.get()
