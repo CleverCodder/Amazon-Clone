@@ -12,4 +12,4 @@ function setCartCounter(totalCount) {
 	document.querySelector('.cart-item-number').innerText = totalCount;
 }
 
-getCartItems();
+getCartItems(); // Here Call the Function.

@@ -1,5 +1,5 @@
 function getCartItems() {
-	// getting data from Cart Items
+	// getting data from Cart Items.
 	db.collection('cart-items').onSnapshot((res) => {
 		let cartItems = [];
 		// iterating over each document in Cart-Items collection

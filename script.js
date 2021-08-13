@@ -1,5 +1,5 @@
 // Include with the inde.HTML.
-// Get the Data From Database Hello.
+// Get the Data From Database Firebase.
 function getItems() {
 	db.collection('items')
 		.get()
