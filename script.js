@@ -19,6 +19,9 @@ function getItems() {
 		});
 }
 
+console.log(numeral);
+console.log(numeral);
+
 // Here the funtion Ending here getItems().
 
 // Here When Click The Add To cart Button Then Only Database quantity Add One.
