@@ -102,8 +102,6 @@ function generateCartItems(cartItems) {
 	document.querySelector('.cart-items').innerHTML = itemsHTML;
 	createEventListeners();
 }
-console.log(VTTCue);
-
 // Here Function Is End.
 
 function createEventListeners() {
