@@ -20,7 +20,6 @@ function getItems() {
 }
 
 console.log(numeral);
-console.log(numeral);
 
 // Here the funtion Ending here getItems().
 

@@ -103,27 +103,7 @@ function generateCartItems(cartItems) {
 	createEventListeners();
 }
 console.log(VTTCue);
-console.log(generateCartItems);
-console.log(HTMLBRElement);
-console.log(Headers);
-console.log(fetch);
-console.log(Headers);
-console.log(fetch);
-console.log(db);
-console.log(WebGLBuffer);
-console.log(HTMLBRElement);
-console.log(generateCartItems);
-console.log(generateCartItems);
-console.log(generateCartItems);
-console.log(frameElement);
-console.log(frameElement);
-console.log(FocusEvent);
-console.log(dispatchEvent);
-console.log(onanimationstart);
-console.log(db);
-console.log(GamepadHapticActuator);
-console.log(PublicKeyCredential);
-console.log(screen);
+
 // Here Function Is End.
 
 function createEventListeners() {
