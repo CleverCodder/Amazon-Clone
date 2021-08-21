@@ -19,8 +19,6 @@ function getItems() {
 		});
 }
 
-console.log(numeral);
-
 // Here the funtion Ending here getItems().
 
 // Here When Click The Add To cart Button Then Only Database quantity Add One.
@@ -53,53 +51,88 @@ function generateItems(items) {
 
 	// Here I Styling The Product On Index.Html Page.
 	items.forEach((item) => {
+		console.log(Math.floor(item.rating));
+
 		let doc = document.createElement('div');
 		doc.classList.add('main-product', 'mr-5');
-		doc.innerHTML = `
+		if (item.image && item.name && item.make && item.rating && item.price) {
+			doc.innerHTML = `
         <div class="product-iamge w-48 h-52 bg-white rounded-lg p-4">
 									<img
-										src="${item.image}"
+										src="${item.image} " alt="Check Your Database Image Feild"
 										class="w-full h-full object-contain"
 									/>
 								</div>
 								<div class="product-name text-gray-700 font-bold mt-2 text-sm">
 									${item.name}
 								</div>
+								
 								<div class="product-make text-green-700 font-bold">
 									${item.make}
 								</div>
-								<div class="product-rating text-yellow-300 font-bold my-1">
-									⭐⭐⭐⭐⭐ ${item.rating}
+								
+								${
+									item.rating
+										? [...new Array(Math.floor(item?.rating))].map((rat) => {
+												return `<div class="inline-flex"><span class="fa fa-star checked"></span></div>`;
+										  })
+										: ''
+								}
+										${
+											item.rating
+												? [...new Array(5 - Math.floor(item.rating))].map(
+														(rat) => {
+															return `<div class="inline-flex"><span>&#9734;</span></div>`;
+														}
+												  )
+												: ''
+										}
+										
+										
+								<div class="product-rating text-yellow-300 font-bold my-1 -mt-6">
+								                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																							 ${item.rating}
+																							
+																							
+																						
 								</div>
+								
 								<div class="product-price font-bold text-gray-700 text-lg">
 									$ ${numeral(item.price).format('$0,0.00')}
 								</div>`;
-		// FUntion Ending Here generateItems(items) this.
 
-		// Here I style the Add To Cart Button ON html File.
-		let addToCartEl = document.createElement('div');
-		addToCartEl.classList.add(
-			'hover:bg-yellow-600',
-			'cursor-pointer',
-			'text-md',
-			'bg-yellow-500',
-			'w-28',
-			'h-8',
-			'add-to-cart',
-			'justify-center',
-			'items-center',
-			'flex',
-			'text-white',
-			'rounded'
-		);
-		addToCartEl.innerText = 'Add To cart'; // Here I Write The Button Name.
-		addToCartEl.addEventListener('click', function () {
-			// Here When Click The Add To cart Button Then This Fuction Call.
-			addToCart(item);
-		});
-		doc.appendChild(addToCartEl);
-		document.querySelector('.main-section-products').appendChild(doc);
+			// Funtion Ending Here generateItems(items) this.
+
+			// Here I style the Add To Cart Button ON html File.
+			let addToCartEl = document.createElement('div');
+			addToCartEl.classList.add(
+				'hover:bg-yellow-600',
+				'cursor-pointer',
+				'text-md',
+				'bg-yellow-500',
+				'w-28',
+				'h-8',
+				'add-to-cart',
+				'justify-center',
+				'items-center',
+				'flex',
+				'text-white',
+				'rounded'
+			);
+
+			addToCartEl.innerText = `Add To Cart `;
+
+			// Here I Write The Button Name.
+			addToCartEl.addEventListener('click', function () {
+				// Here When Click The Add To cart Button Then This Fuction Call.
+				addToCart(item);
+			});
+			doc.appendChild(addToCartEl);
+			document.querySelector('.main-section-products').appendChild(doc);
+		}
 	});
 }
 
 getItems(); // Here I Call The Funtion.
+
+// ${item.make ? item.make : ''}

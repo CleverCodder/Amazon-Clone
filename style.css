@@ -4,3 +4,11 @@
 	background-position: center;
 	background-size: cover;
 }
+
+.checked {
+	color: orange;
+}
+
+span {
+	content: '\2606';
+}
